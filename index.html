@@ -3,165 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>VictoryGarden User Guide</title>
-<meta name="description" content="A short guide to the VictoryGarden.io map, Local Food & Growing Directory, Me page, Homestead Score and rules check.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap">
+<title>VictoryGarden.io guide</title>
+<meta http-equiv="refresh" content="0; url=https://victorygarden.io/guide">
+<link rel="canonical" href="https://victorygarden.io/guide">
 <style>
-/* Layout: one calm reading column, a quick "I want to" table up top, short sections after. */
-:root {
-  --bg: #fafaf7;
-  --fg: #1d2a22;
-  --muted: #5d6b62;
-  --line: #dde3dc;
-  --card: #ffffff;
-  --accent: #1f5d3b;
-  --accent-ink: #ffffff;
-  --soft: #e9f1ea;
-  --warn-bg: #fbf3df;
-  --warn-line: #e5cf93;
-  --font-display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", sans-serif;
-  --font-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #121a15; --fg: #e6ede7; --muted: #9fb0a5; --line: #2a3a30; --card: #18231c;
-    --accent: #7fcf9d; --accent-ink: #0f1a13; --soft: #1d2d23; --warn-bg: #2b2616; --warn-line: #5d5127;
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #121a15; --fg: #e6ede7; --muted: #9fb0a5; --line: #2a3a30; --card: #18231c;
-  --accent: #7fcf9d; --accent-ink: #0f1a13; --soft: #1d2d23; --warn-bg: #2b2616; --warn-line: #5d5127;
-  color-scheme: dark;
-}
-* { box-sizing: border-box; }
-body { background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 17px; line-height: 1.55; padding-inline: 16px; padding-block: 28px 56px; }
-main { max-width: 44rem; margin: 0 auto; }
-h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; text-wrap: balance; margin: 0; }
-h1 { font-size: clamp(2rem, 6vw, 2.8rem); letter-spacing: -0.01em; }
-h2 { font-size: 1.45rem; margin-top: 2.6rem; padding-top: 1.1rem; border-top: 1px solid var(--line); }
-h3 { font-size: 1.05rem; margin-top: 1.3rem; }
-p { margin: 0.7rem 0 0; max-width: 65ch; }
-a { color: var(--accent); text-underline-offset: 3px; }
-a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
-.eyebrow { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); font-weight: 600; margin: 0 0 0.5rem; }
-.lede { font-size: 1.15rem; color: var(--muted); margin-top: 0.9rem; }
-.go { display: grid; gap: 0.5rem; margin-top: 1.2rem; }
-.go a { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0.75rem; align-items: center; padding: 0.7rem 0.95rem; background: var(--card); border: 1px solid var(--line); border-radius: 10px; text-decoration: none; color: var(--fg); }
-.go a:hover { border-color: var(--accent); }
-.go b { font-weight: 600; }
-.go span { color: var(--accent); font-weight: 600; font-size: 0.92rem; white-space: nowrap; }
-ul { padding-left: 1.2rem; margin: 0.7rem 0 0; max-width: 65ch; }
-li { margin-top: 0.35rem; }
-.key { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 0.4rem 1rem; margin: 0.9rem 0 0; padding: 0; list-style: none; }
-.key li { display: flex; gap: 0.6rem; align-items: baseline; margin: 0; font-size: 0.95rem; }
-.dot { flex: none; width: 0.8rem; height: 0.8rem; border-radius: 50%; transform: translateY(0.1rem); }
-.note { margin-top: 1.1rem; padding: 0.85rem 1rem; background: var(--warn-bg); border: 1px solid var(--warn-line); border-radius: 10px; font-size: 0.97rem; }
-.note p { margin: 0; }
-.note p + p { margin-top: 0.5rem; }
-.roles { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.8rem; padding: 0; list-style: none; }
-.roles li { margin: 0; padding: 0.25rem 0.7rem; background: var(--soft); border-radius: 999px; font-size: 0.93rem; }
-footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.93rem; }
+  body { font-family: system-ui, sans-serif; max-width: 32rem; margin: 20vh auto; padding: 0 1rem; text-align: center; color: #1f2a1f; }
+  a { color: #2f6b3a; font-weight: 600; }
 </style>
-
 </head>
 <body>
-<main>
-  <p class="eyebrow">VictoryGarden.io</p>
-  <h1>Your guide to VictoryGarden</h1>
-  <p class="lede">VictoryGarden helps you grow food where you live and find local food, seeds, compost and help nearby. It covers Santa Barbara, Ventura, San Luis Obispo, Los Angeles, Orange, Riverside, San Bernardino and San Diego counties.</p>
-
-  <h2 id="quick">What do you want to do?</h2>
-  <div class="go">
-    <a href="https://victorygarden.io/directory"><b>Find a farmers market, farm stand or u-pick farm</b><span>Directory</span></a>
-    <a href="https://victorygarden.io/directory?group=supplies"><b>Find seeds, compost, plants or garden help</b><span>Directory</span></a>
-    <a href="https://victorygarden.io/"><b>See everything near me on a map</b><span>Map</span></a>
-    <a href="https://victorygarden.io/me/want"><b>Ask for something: food, help, a teacher, land, tools</b><span>Me &rarr; Want</span></a>
-    <a href="https://victorygarden.io/me/have"><b>Share extra produce, space, tools or know-how</b><span>Me &rarr; Have</span></a>
-    <a href="https://victorygarden.io/studio/homestead-score"><b>See what to do next on my property</b><span>Homestead Score</span></a>
-    <a href="https://victorygarden.io/learn"><b>Ask a gardening question</b><span>GrowGuide</span></a>
-  </div>
-
-  <h2 id="start">Getting started</h2>
-  <p>You can browse the map and the directory without signing in. To save a property, post something, send a message or track your progress, create an account.</p>
-  <p>When you sign up, the app asks what describes you. You can change it later, and you can be more than one.</p>
-  <ul class="roles" aria-label="Roles">
-    <li>I have space</li><li>I grow</li><li>I offer help</li><li>I want food</li><li>I teach</li>
-  </ul>
-  <p>Use the <b>EN / ES</b> switch at the top of any page to read the app in English or Spanish.</p>
-
-  <h2 id="map">The map</h2>
-  <p>The home page is a map of what is near you. Use the filter chips above it to turn layers on and off:</p>
-  <ul>
-    <li><b>Land</b>: yards and land that owners offer for growing.</li>
-    <li><b>Services</b> and <b>Guides</b>: builders, irrigation installers, teachers and other local help.</li>
-    <li><b>Farms &amp; markets</b>: farmers markets, farm stands, u-pick farms, CSAs and urban farms.</li>
-    <li><b>Seeds &amp; supplies</b>: seed libraries, compost, nurseries, community gardens and garden help.</li>
-  </ul>
-  <p>Open the <b>Pin key</b> in the bottom right corner to see what each color means. Tap a line in the key to hide or show that kind of pin, for example to hide farmers markets and see only farms. <b>Show all farms &amp; markets</b> zooms out to the whole region. Pins in a crowd group into a numbered circle; tap it to zoom in.</p>
-  <ul class="key" aria-label="Pin colors">
-    <li><span class="dot" style="background:#c8923a"></span>Farmers market</li>
-    <li><span class="dot" style="background:#e8590c"></span>Farm stand or on-farm market</li>
-    <li><span class="dot" style="background:#c2255c"></span>U-pick or agritourism</li>
-    <li><span class="dot" style="background:#8b5e34"></span>CSA (farm share)</li>
-    <li><span class="dot" style="background:#7048e8"></span>Urban farm or homestead</li>
-    <li><span class="dot" style="background:#f08c00"></span>Seeds and plants</li>
-    <li><span class="dot" style="background:#343a40"></span>Compost and soil</li>
-    <li><span class="dot" style="background:#e03131"></span>Farm, feed and garden supply</li>
-    <li><span class="dot" style="background:#5c940d"></span>Community garden</li>
-    <li><span class="dot" style="background:#ae3ec9"></span>Garden help and classes</li>
-  </ul>
-  <p>Some places have no pin. We only pin a place when its source published a street address to visit. Others show the town only.</p>
-
-  <h2 id="directory">The Local Food &amp; Growing Directory</h2>
-  <p>A free list for the eight counties, open to everyone. Pick <b>Food to buy</b> or <b>Seeds, compost &amp; supplies</b>, then narrow by county and type. Switch between <b>List</b> and <b>Map</b>. Search by name or town.</p>
-  <h3>Run a farm, garden or business?</h3>
-  <p>Tap <b>Add your farm, garden or business</b>. A person reviews each submission before it appears. You choose whether your street address shows.</p>
-  <h3>See something wrong?</h3>
-  <p>Every card has links to <b>Report a problem</b>, <b>Claim this listing</b> and <b>Remove this listing</b>. A removal request hides the listing right away.</p>
-  <div class="note">
-    <p><b>Check before you go.</b> We build the directory from public lists and from what listed places send us. We do not inspect or verify anyone. Hours change and some sources are a year or more old. Each card shows where its facts came from and when. Call or check the place's own site first.</p>
-  </div>
-
-  <h2 id="me">Me: Have, Want and Grow</h2>
-  <p>The <b>Me</b> page is your home base.</p>
-  <ul>
-    <li><b>Have</b>: post extra fruit or produce, offer yard space, share tools or supplies, or offer to teach.</li>
-    <li><b>Want</b>: look for local food, garden help, a teacher, land to grow on, or tools and supplies. Each choice also shows the matching directory listings.</li>
-    <li><b>Grow</b>: pick where you are, from curious to running an operation, and get the next step.</li>
-  </ul>
-
-  <h2 id="score">Homestead Score</h2>
-  <p>A checklist of seven phases for your property: soil and beds, water, planting density, animals, energy and waste, vertical growing, and selling. Check off steps as you finish them. The score shows your next phase, and each phase links to seeds, compost, supplies and local help that fit that step.</p>
-
-  <h2 id="property">My properties and rules check</h2>
-  <p>Add a property address and VictoryGarden looks up its zoning and which local rules apply to things like raised beds, chickens, bees, farm stands and rain barrels. It can also build a permit packet and a due-diligence checklist for buying land.</p>
-  <div class="note">
-    <p><b>Information, not legal advice.</b> Rule coverage is limited today: the City of Santa Barbara and the unincorporated parts of Santa Barbara, Ventura and San Luis Obispo counties. Other addresses show &ldquo;not covered&rdquo; instead of a guess. Always confirm with your city or county before you build.</p>
-  </div>
-
-  <h2 id="more">More tools</h2>
-  <ul>
-    <li><a href="https://victorygarden.io/learn"><b>GrowGuide</b></a>: ask how-to questions. It answers from an approved library and says so when it does not know.</li>
-    <li><a href="https://victorygarden.io/studio/vision"><b>Vision Studio</b></a>: see what your yard could become.</li>
-    <li><a href="https://victorygarden.io/starter-kit"><b>Starter Kit</b></a>: what grows well on the Central Coast, with seed and compost sources.</li>
-    <li><a href="https://victorygarden.io/forum"><b>Forum</b></a> and <b>Messages</b>: talk with neighbors, growers and providers.</li>
-  </ul>
-
-  <h2 id="privacy">Your information</h2>
-  <ul>
-    <li>Your project details go to a contractor only if you check the box that allows it, and only to the ones you choose.</li>
-    <li>You can ask us to correct or remove a directory listing at any time.</li>
-    <li>VictoryGarden does not sell food or take payment for food. Any purchase is between you and the seller.</li>
-  </ul>
-
-  <footer>
-    <p>Questions, or something looks wrong? Reply to the message that brought you this guide.</p>
-  </footer>
-</main>
-
+<h1>The VictoryGarden guide has moved</h1>
+<p>It now lives on the site, where it stays up to date.</p>
+<p><a href="https://victorygarden.io/guide">Open the guide at victorygarden.io/guide</a></p>
+<script>location.replace("https://victorygarden.io/guide");</script>
 </body>
 </html>
